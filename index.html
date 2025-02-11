@@ -1,172 +1,156 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTANK - Hardcore Punk</title>
+    <link href="https://fonts.googleapis.com/css2?family=Frijole&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: limegreen;
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            font-family: 'Frijole', cursive;
+            text-transform: uppercase;
+        }
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            z-index: -1;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 100px 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            text-align: left;
+            z-index: 1000;
+        }
+        .menu-toggle {
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+            color: white;
+            position: absolute;
+            left: 15px;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+            font-size: 1.5rem;
+            text-align: left;
+        }
+        .menu a:hover {
+            background: limegreen;
+            color: black;
+        }
+        .merch img {
+            width: 200px;
+            margin: 10px;
+            filter: grayscale(100%);
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+                menu.style.flexDirection = "column";
+            }
+        }
+    </script>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="de"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;GESTANK - Hardcore Punk&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Frijole&amp;family=Oswald:wght@300;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: black;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: limegreen;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Oswald', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 4rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Frijole', cursive;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header video {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>filter: grayscale(100%);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: -1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.parallax {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-attachment: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-position: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-repeat: no-repeat;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-size: cover;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 100px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>nav {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0, 0, 0, 0.8);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.menu-toggle {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.menu {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0, 0, 0, 0.9);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 250px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 2px 0 10px rgba(0,0,0,0.5);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.menu a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.menu a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: limegreen;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: black;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.merch img {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 200px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>filter: grayscale(100%);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: flicker 1.5s infinite alternate;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes flicker {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>0% { opacity: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>50% { opacity: 0.8; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>100% { opacity: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function toggleMenu() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>var menu = document.getElementById("menu");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (menu.style.display === "flex") {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>menu.style.display = "none";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>menu.style.display = "flex";</p>
-<p class="p1"><span class="Apple-converted-space">                </span>menu.style.flexDirection = "column";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="menu-toggle" onclick="toggleMenu()"&gt;☰&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="menu" id="menu"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#about"&gt;Über uns&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#music"&gt;Musik&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#merch"&gt;Merch&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#contact"&gt;Kontakt&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>GESTANK</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;video autoplay loop muted&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;source src="https://www.youtube.com/embed/TI2QZP-C9Xs" type="video/mp4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/video&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="about" class="parallax" style="background-image: url('/mnt/data/Bildschirmfoto 2025-02-11 um 12.00.20.png');"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Über Gestank&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="text-align: justify; max-width: 600px; margin: auto;"&gt;Gestank gibt es schon eine ganze Weile. Unsere Musik bewegt sich zwischen wütendem Hardcore-Punk und düsterem Chaos. Wir haben in Kellern gespielt, auf Festivals, in besetzten Häusern und zwischendurch mal irgendwo, wo wir nicht hätten sein sollen. Unsere Texte sind direkt, unsere Songs kurz und laut. Wenn du uns suchst, findest du uns irgendwo zwischen Krach und Wahnsinn.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="music"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Musik&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Hör dir unsere Musik an:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="music-embed"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/xyz" width="300" height="380" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;a href="https://open.spotify.com"&gt;Spotify&lt;/a&gt; | &lt;a href="https://bandcamp.com"&gt;Bandcamp&lt;/a&gt; | &lt;a href="https://youtube.com"&gt;YouTube&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Kontakt&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Booking &amp; Anfragen: &lt;a href="https://linktr.ee/gestank"&gt;linktr.ee/gestank&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Folge uns: &lt;a href="https://www.instagram.com/gestankpunk"&gt;Instagram&lt;/a&gt; | &lt;a href="https://www.facebook.com/gestankpunk?locale=de_DE"&gt;Facebook&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&amp;copy; 2024 GESTANK - No gods, no masters.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
+            <a href="#about">Über uns</a>
+            <a href="#music">Musik</a>
+            <a href="#merch">Merch</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+    </nav>
+    
+    <header>
+        GESTANK
+        <video autoplay loop muted>
+            <source src="https://www.youtube.com/embed/TI2QZP-C9Xs" type="video/mp4">
+        </video>
+    </header>
+    
+    <section id="about" class="parallax">
+        <h2>Über Gestank</h2>
+        <p style="text-align: justify; max-width: 600px; margin: auto;">Gestank gibt es schon eine ganze Weile. Unsere Musik bewegt sich zwischen wütendem Hardcore-Punk und düsterem Chaos. Wir haben in Kellern gespielt, auf Festivals, in besetzten Häusern und zwischendurch mal irgendwo, wo wir nicht hätten sein sollen. Unsere Texte sind direkt, unsere Songs kurz und laut. Wenn du uns suchst, findest du uns irgendwo zwischen Krach und Wahnsinn.</p>
+    </section>
+    
+    <section id="music">
+        <h2>Musik</h2>
+        <p>Hör dir unsere Musik an:</p>
+        <div class="music-embed">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/xyz" width="300" height="380" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p><a href="https://open.spotify.com">Spotify</a> | <a href="https://bandcamp.com">Bandcamp</a> | <a href="https://youtube.com">YouTube</a></p>
+    </section>
+    
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Booking & Anfragen: <a href="https://linktr.ee/gestank">linktr.ee/gestank</a></p>
+        <p>Folge uns: <a href="https://www.instagram.com/gestankpunk">Instagram</a> | <a href="https://www.facebook.com/gestankpunk?locale=de_DE">Facebook</a></p>
+    </section>
+    
+    <footer>
+        &copy; 2024 GESTANK - No gods, no masters.
+    </footer>
 </body>
 </html>
